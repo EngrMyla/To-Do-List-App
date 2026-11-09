@@ -4,7 +4,7 @@ todo_list = []
 def add_task():
     task = input("Enter a task: ")
     todo_list.append({"Task": task, "Status": "pending"})
-    print("New Task Added Successfully!\n")
+    print("New task added successfully!\n")
 
 
 # View Tasks Function
@@ -20,7 +20,7 @@ def view_tasks():
 # Remove Tasks
 def remove_task():
     if len(todo_list) == 0:
-        print("List is Empty!/n")
+        print("List is empty!\n")
     else:
         try:
             search_index = int(input("Enter the index of the task to remove: ")) - 1
@@ -28,14 +28,14 @@ def remove_task():
                 removed_task = todo_list.pop(search_index)
                 print(f"Task Removed: {removed_task['Task']}\n")
             else:
-                print("Invalid Task Number. Please try again.\n")
+                print("Invalid task number. Please try again.\n")
         except ValueError:
-            print("Invalid task Number. Please try a valid Task Number\n")
+            print("Invalid task number. Please try a valid task number.\n")
 
 # Marking Task as Completed
 def mark_done():
     if len(todo_list) == 0:
-        print("List is Empty!/n")
+        print("List is Empty!\n")
     else:
         try:
             search_index = int(input("Enter the index of the task that you want to mark as completed: ")) - 1
@@ -43,13 +43,13 @@ def mark_done():
                 todo_list[search_index]['Status'] = 'done'
                 print(f"Task {todo_list[search_index]['Task']} marked as completed.\n")
             else:
-                print("Invalid Task Number. Please try again.\n")
+                print("Invalid task number. Please try again.\n")
         except ValueError:
-            print("Invalid task Number. Please try a valid Task Number\n")
-    
+            print("Invalid task number. Please try a valid task number.\n")
+
 # Main Menu Function
 def menu():
-    while(True):
+    while True:
         print("Todo List Menu:")
         print("1. Add a New Task")
         print("2. View All Tasks")
@@ -67,9 +67,8 @@ def menu():
         elif choice == '4':
             mark_done()
         elif choice == '5':
-            print("Exiting the Todo List application.\n")
+            print("Exiting...\n")
             exit()
-            break
         else:
             print("Invalid choice. Please try again.\n")
 
