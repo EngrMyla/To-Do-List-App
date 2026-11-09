@@ -17,17 +17,21 @@ def view_tasks():
             print(f"{index}: {task['Task']} - {task['Status']}")
     print("\n")
 
-# remove Tasks
+# Remove Tasks
 def remove_task():
     if len(todo_list) == 0:
         print("List is Empty!/n")
     else:
-        search_index = int(input("Enter the index of the task to remove: ")) - 1
-        if 0 <= search_index < len(todo_list):
-            removed_task = todo_list.pop(search_index)
-            print(f"Task Removed: {removed_task['Task']}\n")
-        else:
-            print("Invalid task Number. Please try again.\n")
+        try:
+            search_index = int(input("Enter the index of the task to remove: ")) - 1
+            if 0 <= search_index < len(todo_list):
+                removed_task = todo_list.pop(search_index)
+                print(f"Task Removed: {removed_task['Task']}\n")
+            else:
+                print("Invalid Task Number. Please try again.\n")
+        except ValueError:
+            print("Invalid task Number. Please try a valid Task Number\n")
+
 
     
 # Main Menu Function
