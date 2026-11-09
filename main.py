@@ -32,7 +32,20 @@ def remove_task():
         except ValueError:
             print("Invalid task Number. Please try a valid Task Number\n")
 
-
+# Marking Task as Completed
+def mark_done():
+    if len(todo_list) == 0:
+        print("List is Empty!/n")
+    else:
+        try:
+            search_index = int(input("Enter the index of the task that you want to mark as completed: ")) - 1
+            if 0 <= search_index < len(todo_list):
+                todo_list[search_index]['Status'] = 'done'
+                print(f"Task {todo_list[search_index]['Task']} marked as completed.\n")
+            else:
+                print("Invalid Task Number. Please try again.\n")
+        except ValueError:
+            print("Invalid task Number. Please try a valid Task Number\n")
     
 # Main Menu Function
 def menu():
